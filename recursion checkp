@@ -1,0 +1,25 @@
+function isPalindrome(word) {
+    // Base case: an empty word or a word containing a single character is a palindrome
+    if (word.length <= 1) {
+        return true;
+    }
+
+    // Compare the characters at the ends of the word
+    if (word[0] === word[word.length - 1]) {
+        // Recursively test the rest of the word
+        return isPalindrome(word.slice(1, -1));
+    } else {
+        // If the characters are different, it's not a palindrome
+        return false;
+    }
+}
+
+// Example usage:
+let wordToCheck = "radar";
+let result = isPalindrome(wordToCheck);
+
+if (result) {
+    console.log(`${wordToCheck} is a palindrome!`);
+} else {
+    console.log(`${wordToCheck} is not a palindrome.`);
+}
